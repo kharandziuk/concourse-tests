@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: python
+    tag: '3.8'
+
+inputs:
+  - name: repo
+
+params:
+  COMMAND: code.lint
+
+
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    echo 'hi'

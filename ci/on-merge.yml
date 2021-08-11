@@ -1,0 +1,21 @@
+resources:
+  - name: merge.git
+    type: git
+    icon: github
+    check_every: 2m
+    source:
+      uri: git@github.com:kharandziuk/concourse-tests.git
+      branch: main
+      username: ((GITHUB_ACCESS_TOKEN))
+      password: x-oauth-basic
+
+jobs:
+  - name: deploy
+    plan:
+    - get: merge.git
+      trigger: true
+      version: latest
+    - task: deploy
+      file: merge.git/ci/tasks/job.yml
+      input_mapping:
+        repo: merge.git
