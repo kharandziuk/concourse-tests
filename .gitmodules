@@ -1,0 +1,3 @@
+[submodule "concourse-docker"]
+	path = concourse-docker
+	url = https://github.com/concourse/concourse-docker.git
