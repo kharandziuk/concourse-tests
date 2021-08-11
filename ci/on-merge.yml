@@ -4,7 +4,8 @@ resources:
     icon: github
     check_every: 2m
     source:
-      uri: git@github.com:kharandziuk/concourse-tests.git
+      uri: https://github.com/kharandziuk/concourse-tests.git
+      icon: github
       branch: main
       username: ((GITHUB_ACCESS_TOKEN))
       password: x-oauth-basic
